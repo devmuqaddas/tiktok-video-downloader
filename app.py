@@ -375,8 +375,8 @@ async def health_check():
         "thread_pool_size": executor._max_workers,
     }
 
-
 if __name__ == "__main__":
+    import os
     import uvicorn
-
-    uvicorn.run("app:app", host="0.0.0.0", port=5005, reload=True)
+    port = int(os.environ.get("PORT", 5000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=Tru
